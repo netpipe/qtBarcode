@@ -17,11 +17,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include <jpeglib.h>
 #include <png.h>
 
-#include <quirc.h>
+#include "../lib/quirc.h"
 
 #include "dbgutil.h"
 

@@ -17,10 +17,12 @@
 #ifndef DBGUTIL_H_
 #define DBGUTIL_H_
 
-#include "quirc.h"
+#include <QString>
+
+#include "../lib/quirc.h"
 
 /* Dump decoded information on stdout. */
-void dump_data(const struct quirc_data *data);
+QString dump_data(const struct quirc_data *data);
 
 /* Dump a grid cell map on stdout. */
 void dump_cells(const struct quirc_code *code);

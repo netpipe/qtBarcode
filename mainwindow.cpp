@@ -6,6 +6,8 @@
 #include <QGraphicsSvgItem>
 #include <Barcode/functii.h>
 #include <QFileDialog>
+#include "quirc/tests/inspect.h"
+
 using namespace std;
 
 
@@ -114,4 +116,10 @@ void MainWindow::on_savetofile_clicked()
             pixMap.save(fileName);
         }
 
+}
+
+void MainWindow::on_scan_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open rx/tx"), "./", tr("rx/tx files (*.png *.jpg)"));
+    decodeqr(fileName);
 }

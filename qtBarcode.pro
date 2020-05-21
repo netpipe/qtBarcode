@@ -11,6 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = qtBarcode
 TEMPLATE = app
 
+LIBS += -lpng -ljpeg
+
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -28,14 +30,22 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     QRCode/QrCode.cpp \
-    Barcode/functii.cpp
+    Barcode/functii.cpp \
+    quirc/lib/decode.c \
+    quirc/lib/identify.c \
+    quirc/lib/quirc.c \
+    quirc/lib/version_db.c
 
 HEADERS += \
         mainwindow.h \
     QRCode/QrCode.hpp \
     QRCode/QrCodeGeneratorDemo.h \
     Barcode/functii.h \
-    Barcode/scanner.h
+    Barcode/scanner.h \
+    quirc/lib/quirc.h \
+    quirc/lib/quirc_internal.h \
+    quirc/tests/dbgutil.h \
+    quirc/tests/inspect.h
 
 FORMS += \
         mainwindow.ui
