@@ -125,3 +125,10 @@ void MainWindow::on_scan_clicked()
     ui->decode->setText(decodeqr(fileName));
 
 }
+
+void MainWindow::on_scan2_clicked()
+{
+    char *argv1[]={"appname","-format","EAN13","test.png","test"};
+     int argc1 = sizeof(argv1) / sizeof(char*) - 1;
+    readbarcode(argc1, argv1 );
+}

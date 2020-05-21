@@ -27,6 +27,8 @@ private slots:
 
     void on_scan_clicked();
 
+    void on_scan2_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
