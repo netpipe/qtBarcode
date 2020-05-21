@@ -121,5 +121,6 @@ void MainWindow::on_savetofile_clicked()
 void MainWindow::on_scan_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open rx/tx"), "./", tr("rx/tx files (*.png *.jpg)"));
-    decodeqr(fileName);
+    ui->decode->setText(decodeqr(fileName));
+
 }

@@ -398,5 +398,5 @@ QString MainWindow::decodeqr(QString image)
     quirc_destroy(q);
 
 
-    //return 0;
+    return test;
 }

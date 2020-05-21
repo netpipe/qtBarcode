@@ -140,7 +140,7 @@
    <widget class="QPushButton" name="scan">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>370</x>
       <y>250</y>
       <width>88</width>
       <height>28</height>
@@ -153,14 +153,27 @@
    <widget class="QPushButton" name="savetofile">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>250</y>
+      <x>580</x>
+      <y>220</y>
       <width>88</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
      <string>Savetofile</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="decode">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>250</y>
+      <width>351</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
