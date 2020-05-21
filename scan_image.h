@@ -129,13 +129,14 @@ QString readbarcode(int argc, char* argv[])
         auto errLevel = result.metadata().getString(ResultMetadata::Key::ERROR_CORRECTION_LEVEL);
         if (!errLevel.empty()) {
             std::cout << "EC Level: " << TextUtfEncoding::ToUtf8(errLevel) << "\n";
+        }
 
         std::string teststring = TextUtfEncoding::ToUtf8(result.text());
+        std::cout << teststring.c_str();
         test = QString(teststring.c_str());
-        }
-        return "";
+        return test.toLatin1();
 	}
 
-    return test;
+    return "";
 }
 #endif

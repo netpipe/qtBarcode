@@ -17,9 +17,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-
-
 }
 
 MainWindow::~MainWindow()
@@ -139,6 +136,6 @@ void MainWindow::on_scan2_clicked()
  //   const char *argv1 = ba.data();
 
      int argc1 = sizeof(argv1) / sizeof(char*) - 1;
-    readbarcode(argc1, argv1 );
+   ui->xzingdecode->setText( readbarcode(argc1, argv1 ).toLatin1());
 #endif
 }
