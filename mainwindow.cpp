@@ -129,7 +129,15 @@ void MainWindow::on_scan_clicked()
 void MainWindow::on_scan2_clicked()
 {
 #ifdef ZXING
-    char *argv1[]={"appname","-format","EAN13","test.png","test"};
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open rx/tx"), "./", tr("rx/tx files (*.png *.jpg)"));
+    ui->decode->setText(decodeqr(fileName));
+
+  //   char *argv1[]={"appname","-format","EAN13","test.png","test"};
+    char *argv1[]={"appname","-format",ui->XZINGformat->currentText().toLocal8Bit().data(),fileName.toLocal8Bit().data(),"null"};
+  // QString str1 = "appname","-format"","+ui->XZINGformat->currentText()+","+fileName.toLatin1()+"," "null";
+  //  QByteArray ba = {"appname","-format",ui->XZINGformat->currentText(),fileName.toLatin1(),"null"}; //str1.toLocal8Bit();
+ //   const char *argv1 = ba.data();
+
      int argc1 = sizeof(argv1) / sizeof(char*) - 1;
     readbarcode(argc1, argv1 );
 #endif

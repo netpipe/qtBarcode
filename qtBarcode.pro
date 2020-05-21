@@ -16,10 +16,20 @@ INCLUDEPATH += ./ZXing
 QMAKE_LFLAGS += -Wl,--rpath=./
 
 LIBS += -L./ -lpng -ljpeg
+#exists("./libZXingCore3.so"){ message( "foo bar is hereee" )}
 
+#exists("libZXingCore.so") {
 #CONFIG+=ZXING
+#}
+
+exists("libZXingCore.so") {
+      message("Configuring ZXING")
+      CONFIG+=ZXING
+}
+
+
 ZXING{
-LIBS+= -lZXingCore
+LIBS += -lZXingCore
 DEFINES += ZXING
 }
 

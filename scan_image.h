@@ -71,8 +71,8 @@ static bool ParseOptions(int argc, char* argv[], bool* fastMode, bool* tryRotate
 		}
 		else if (strcmp(argv[i], "-format") == 0) {
 			if (i + 1 < argc) {
-				++i;
-				*format = ParseFormat(argv[i]);
+                ++i;
+                *format = ParseFormat(argv[i]);
 				if (format->empty()) {
 					std::cerr << "Unreconigned format: " << argv[i] << "\n";
 					return false;
