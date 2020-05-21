@@ -126,6 +126,7 @@ QString readbarcode(int argc, char* argv[])
         std::cout << "Text:     " << TextUtfEncoding::ToUtf8(result.text()) << "\n"
                   << "Format:   " << ToString(result.format()) << "\n"
                   << "Position: " << result.resultPoints() << "\n";
+
         auto errLevel = result.metadata().getString(ResultMetadata::Key::ERROR_CORRECTION_LEVEL);
         if (!errLevel.empty()) {
             std::cout << "EC Level: " << TextUtfEncoding::ToUtf8(errLevel) << "\n";

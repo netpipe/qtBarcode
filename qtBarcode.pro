@@ -71,7 +71,8 @@ HEADERS += \
     quirc/lib/quirc_internal.h \
     quirc/tests/dbgutil.h \
     quirc/tests/inspect.h \
-    scan_image.h
+    scan_image.h \
+    generate_image.h
 
 FORMS += \
         mainwindow.ui

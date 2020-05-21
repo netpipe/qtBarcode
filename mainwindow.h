@@ -29,6 +29,8 @@ private slots:
 
     void on_scan2_clicked();
 
+    void on_XZINGGenerate_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

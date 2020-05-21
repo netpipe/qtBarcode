@@ -359,6 +359,102 @@
        <string>enable xzing in compile options</string>
       </property>
      </widget>
+     <widget class="QComboBox" name="xzingformat2">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>200</y>
+        <width>84</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>EAN_13</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>AZTEC</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CODABAR</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CODE_39</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CODE_93</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CODE_128</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>DATA_MATRIX</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>EAN_8</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ITF</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>QR_CODE</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>UPC_A</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>UPC_E</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="xzingencode">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>200</y>
+        <width>231</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>123123456789</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="XZINGGenerate">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>200</y>
+        <width>85</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>GENERATE</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
