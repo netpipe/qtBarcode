@@ -30,7 +30,7 @@
 #define N_LINES                 (N_EAN_DIGITS * LINES_PER_DIGIT + LINES_SEPARATORS)
 
 // SVG rendering constants
-#define QUIET_ZONE_WIDTH        5  // should be 9
+#define QUIET_ZONE_WIDTH        9  // should be 9
 #define LABEL_HEIGHT            20
 #define LINES_Y_TOP             0
 #define LINE_Y_BOT_LINES_SHORT  30
@@ -39,7 +39,7 @@
 #define SVG_LINE_WIDTH          2
 #define SVG_HEIGHT              50
 #define SVG_QUIET_ZONE_WIDTH    (QUIET_ZONE_WIDTH * SVG_LINE_WIDTH)
-#define SVG_WIDTH               (N_LINES*SVG_LINE_WIDTH + SVG_QUIET_ZONE_WIDTH)
+#define SVG_WIDTH               (N_LINES*SVG_LINE_WIDTH + SVG_QUIET_ZONE_WIDTH+20)
 
 namespace EAN13
 {
