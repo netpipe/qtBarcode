@@ -12,7 +12,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
     void QRCode(QString text);
-   void EAN13(QString country,QString ean);
+   void EAN13(QString productname,QString country,QString ean);
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);

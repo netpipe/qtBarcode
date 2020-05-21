@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>795</width>
-    <height>282</height>
+    <width>790</width>
+    <height>270</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -115,13 +115,26 @@
      <string>EAN13</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="eanproductname">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>170</y>
+      <width>291</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>productname</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>795</width>
+     <width>790</width>
      <height>24</height>
     </rect>
    </property>

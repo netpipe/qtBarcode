@@ -24,19 +24,30 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::EAN13(QString country,QString ean){ //barcode
+void MainWindow::EAN13(QString productname,QString country,QString ean){ //barcode
 
 //    std::string code13 = EAN13::appendChecksum("123", "123456789"); //countrycode 3 letters,European Article Number 9 digits no spaces
 //    std::string svg = EAN13::createSvg("productName test", code13);
 
-    std::string code13 = EAN13::appendChecksum("123", "123456789"); //countrycode 3 letters,European Article Number 9 digits no spaces
-    std::string svg = EAN13::createSvg("productName test", code13);
+    std::string code13 = EAN13::appendChecksum(country.toLatin1(), ean.toLatin1()); //countrycode 3 letters,European Article Number 9 digits no spaces
+    std::string svg = EAN13::createSvg( productname.toStdString(), code13);
 
     ofstream write;
     std::string   filename = "tmp.svg";
     write.open(filename.c_str(), ios::out | ios::binary);
     write << svg.c_str();
 
+    QImage *img_object = new QImage();
+    img_object->load("./tmp.svg");
+    QPixmap image = QPixmap::fromImage(*img_object);
+ //   QPixmap scaled_img = image.scaled(this->width(), this->height(), Qt::KeepAspectRatio);
+    QPixmap scaled_img = image.scaled(ui->graphicsView->width(), ui->graphicsView->height(), Qt::KeepAspectRatio);
+    QGraphicsScene *scene= new QGraphicsScene();
+   // scene->addItem(new QGraphicsSvgItem("./tmp.svg"));
+    scene->addPixmap(scaled_img);
+    scene->setSceneRect(scaled_img.rect());
+    ui->graphicsView->setScene(scene);
+    ui->graphicsView->show();
 
 }
 
@@ -59,6 +70,18 @@ const wchar_t* wstr = text.c_str() ;
     write.open(filename.c_str(), ios::out | ios::binary);
     write << qr.toSvgString(4);
 
+    QImage *img_object = new QImage();
+    img_object->load("./tmp.svg");
+    QPixmap image = QPixmap::fromImage(*img_object);
+ //   QPixmap scaled_img = image.scaled(this->width(), this->height(), Qt::KeepAspectRatio);
+    QPixmap scaled_img = image.scaled(ui->graphicsView->width(), ui->graphicsView->height(), Qt::KeepAspectRatio);
+    QGraphicsScene *scene= new QGraphicsScene();
+   // scene->addItem(new QGraphicsSvgItem("./tmp.svg"));
+    scene->addPixmap(scaled_img);
+    scene->setSceneRect(scaled_img.rect());
+    ui->graphicsView->setScene(scene);
+    ui->graphicsView->show();
+
 }
 
 void MainWindow::on_generate_clicked()
@@ -68,21 +91,12 @@ void MainWindow::on_generate_clicked()
 
    // system("inkscape -z -e tmp.png -w 1000 -h 1000 tmp.svg");
 
-    QGraphicsScene *scene= new QGraphicsScene();
-    scene->addItem(new QGraphicsSvgItem("./tmp.svg"));
-    ui->graphicsView->setScene(scene);
-    ui->graphicsView->show();
-
 }
 
 void MainWindow::on_ean13_clicked()
 {
-    EAN13(ui->ean13ean->text(),ui->ean13country->text());
+    EAN13(ui->eanproductname->text(),ui->ean13ean->text(),ui->ean13country->text());
 
     // system("inkscape -z -e tmp.png -w 1000 -h 1000 tmp.svg");
 
-    QGraphicsScene *scene= new QGraphicsScene();
-    scene->addItem(new QGraphicsSvgItem("./tmp.svg"));
-    ui->graphicsView->setScene(scene);
-    ui->graphicsView->show();
 }
