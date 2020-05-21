@@ -7,6 +7,7 @@
 #include <Barcode/functii.h>
 #include <QFileDialog>
 #include "quirc/tests/inspect.h"
+#include "scan_image.h"
 
 using namespace std;
 
