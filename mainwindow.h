@@ -23,6 +23,8 @@ private slots:
 
     void on_ean13_clicked();
 
+    void on_savetofile_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

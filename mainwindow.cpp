@@ -5,7 +5,7 @@
 #include <fstream>
 #include <QGraphicsSvgItem>
 #include <Barcode/functii.h>
-
+#include <QFileDialog>
 using namespace std;
 
 
@@ -98,5 +98,20 @@ void MainWindow::on_ean13_clicked()
     EAN13(ui->eanproductname->text(),ui->ean13ean->text(),ui->ean13country->text());
 
     // system("inkscape -z -e tmp.png -w 1000 -h 1000 tmp.svg");
+
+}
+
+void MainWindow::on_savetofile_clicked()
+{
+//    QString fileName = "./file_name.png";
+//    QPixmap pixMap = ui->graphicsView->grab(ui->graphicsView->sceneRect().toRect());
+//    pixMap.save(fileName);
+
+    QString fileName= QFileDialog::getSaveFileName(this, "Save image", QCoreApplication::applicationDirPath(), "BMP Files (*.bmp);;JPEG (*.JPEG);;PNG (*.png)" );
+        if (!fileName.isNull())
+        {
+            QPixmap pixMap = this->ui->graphicsView->grab();
+            pixMap.save(fileName);
+        }
 
 }

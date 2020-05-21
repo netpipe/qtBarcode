@@ -34,7 +34,8 @@ HEADERS += \
         mainwindow.h \
     QRCode/QrCode.hpp \
     QRCode/QrCodeGeneratorDemo.h \
-    Barcode/functii.h
+    Barcode/functii.h \
+    Barcode/scanner.h
 
 FORMS += \
         mainwindow.ui

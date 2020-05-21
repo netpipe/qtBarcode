@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>790</width>
-    <height>270</height>
+    <height>354</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,9 +19,18 @@
      <rect>
       <x>510</x>
       <y>10</y>
-      <width>256</width>
-      <height>192</height>
+      <width>221</width>
+      <height>201</height>
      </rect>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustToContents</enum>
     </property>
    </widget>
    <widget class="QPushButton" name="generate">
@@ -126,6 +135,32 @@
     </property>
     <property name="text">
      <string>productname</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="scan">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>250</y>
+      <width>88</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SCAN</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="savetofile">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>250</y>
+      <width>88</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Savetofile</string>
     </property>
    </widget>
   </widget>
