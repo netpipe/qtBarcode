@@ -128,7 +128,9 @@ void MainWindow::on_scan_clicked()
 
 void MainWindow::on_scan2_clicked()
 {
+#ifdef ZXING
     char *argv1[]={"appname","-format","EAN13","test.png","test"};
      int argc1 = sizeof(argv1) / sizeof(char*) - 1;
     readbarcode(argc1, argv1 );
+#endif
 }
