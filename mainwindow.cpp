@@ -54,6 +54,16 @@ void MainWindow::EAN13(QString productname,QString country,QString ean){ //barco
 
 void MainWindow::QRCode(QString text2) {
 
+
+    QString maxqrstr;
+    for (int i=0 ;i < 2000 ; i++){ //4296 / 8 per ascii  537
+        maxqrstr.append("i");
+    }
+
+ //   qDebug () << maxqrstr.toUtf8().size();
+ //       qDebug () << maxqrstr.toLatin1().size();
+         //   qDebug () << maxqrstr.toWCharArray().size();
+
 std::wstring text ( text2.toStdWString() );
 
 //char *text2 = text.c_str();
@@ -112,6 +122,7 @@ void MainWindow::on_savetofile_clicked()
         if (!fileName.isNull())
         {
             QPixmap pixMap = this->ui->graphicsView->grab();
+
             pixMap.save(fileName);
         }
 
@@ -146,12 +157,18 @@ void MainWindow::on_XZINGGenerate_clicked()
 
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open rx/tx"), "./", tr("rx/tx files (*.png *.jpg)"));
 
+
+//    QString maxqrstr;
+//    for (int i=0 ;i < 2000 ; i++){ //4296 / 8 per ascii  537
+//        maxqrstr.append("i");
+//    }
+//ui->xzingencode->setText(maxqrstr.toLatin1());
         char *argv1[]={"appname",ui->xzingformat2->currentText().toLocal8Bit().data(),ui->xzingencode->text().toLocal8Bit().data(),fileName.toLocal8Bit().data(),"null"};
   int argc1 = sizeof(argv1) / sizeof(char*) - 1;
        int result= xzingencode(argc1, argv1);
     if (result != -1){
         QImage *img_object = new QImage();
-        img_object->load(fileName.);
+        img_object->load(fileName);
         QPixmap image = QPixmap::fromImage(*img_object);
      //   QPixmap scaled_img = image.scaled(this->width(), this->height(), Qt::KeepAspectRatio);
         QPixmap scaled_img = image.scaled(ui->graphicsView->width(), ui->graphicsView->height(), Qt::KeepAspectRatio);
